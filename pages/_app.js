@@ -1,4 +1,4 @@
-import 'E:\\miss\\style\\globlas.css';
+import '../style/globlas.css';
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
