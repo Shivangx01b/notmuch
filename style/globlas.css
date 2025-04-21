@@ -1,0 +1,390 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffeff2 0%, #ffd6e0 100%);
+    transition: background 3s ease;
+  }
+  
+  .main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .floating-heart {
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 25px;
+    padding: 2.5rem;
+    box-shadow: 0 15px 35px rgba(255, 107, 138, 0.3), 0 0 20px rgba(255, 255, 255, 0.5);
+    max-width: 650px;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    position: relative;
+  }
+  
+  .title-container {
+    margin-bottom: 1.5rem;
+  }
+  
+  .title {
+    font-family: 'Dancing Script', cursive;
+    color: #FF6B8A;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .subtitle {
+    font-family: 'Satisfy', cursive;
+    color: #FF8E9E;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .image-container {
+    margin: 1.5rem auto;
+    width: 220px;
+    height: 200px;
+    position: relative;
+  }
+  
+  .love-image {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.15));
+  }
+  
+  .photo-frames {
+    position: absolute;
+    width: 100%;
+    top: -20px;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+  
+  .photo-frame {
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: rotate(-5deg);
+    transition: all 0.3s ease;
+  }
+  
+  .photo-frame.right {
+    transform: rotate(5deg);
+  }
+  
+  .question {
+    font-size: 1.6rem;
+    margin: 1.5rem 0 1rem;
+    font-weight: bold;
+    color: #FF6B8A;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    font-family: 'Satisfy', cursive;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1.5rem 0;
+  }
+  
+  .button {
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    transition: all 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .yes-button {
+    background: linear-gradient(45deg, #FF4778, #FF6B8A, #FF8E9E);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    color: white;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .no-button {
+    background: #f0f0f0;
+    color: #888;
+  }
+  
+  .reconsider-button {
+    background: linear-gradient(45deg, #FF4778, #FF6B8A, #FF8E9E);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    color: white;
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+  }
+  
+  .response {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px dashed #FFD6E0;
+  }
+  
+  .yes-response {
+    color: #FF4778;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 0.8rem;
+    font-size: 1.8rem;
+  }
+  
+  .no-response {
+    color: #888;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 0.8rem;
+    font-size: 1.8rem;
+  }
+  
+  .message {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .heart-burst {
+    font-size: 2.5rem;
+    margin: 1.5rem 0;
+    filter: drop-shadow(0 0 5px rgba(255, 107, 138, 0.5));
+  }
+  
+  .cute-puppy {
+    font-size: 1.5rem;
+    margin: 1.5rem auto;
+    background: #f9f9f9;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .puppy-emoji {
+    font-size: 1.8rem;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+  
+  .puppy-text {
+    vertical-align: middle;
+  }
+  
+  .love-letter-button {
+    background: #FF8E9E;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 1rem 0;
+    font-family: 'Quicksand', sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+  }
+  
+  .love-letter {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    text-align: left;
+    font-family: 'Satisfy', cursive;
+    color: #555;
+    line-height: 1.6;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #FFD6E0;
+    overflow: hidden;
+  }
+  
+  .love-letter p {
+    margin-bottom: 0.8rem;
+  }
+  
+  .love-letter p:first-child, .love-letter p:last-child {
+    text-align: center;
+  }
+  
+  .photos-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  .memory-photo {
+    background: white;
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .memory-photo span {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    color: #666;
+  }
+  
+  .sad-photos {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  
+  .sad-photo {
+    font-size: 3rem;
+    margin: 0 0.5rem;
+  }
+  
+  .countdown {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FF4778;
+    margin-top: 1rem;
+  }
+  
+  .interaction-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  .music-control {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 0.9rem;
+    color: #FF8E9E;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  
+  .music-control:hover {
+    background: rgba(255, 107, 138, 0.2);
+    box-shadow: 0 4px 10px rgba(255, 107, 138, 0.3);
+    transform: scale(1.05);
+  }
+  
+  .footer {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 107, 138, 0.8);
+    padding: 1rem;
+  }
+  
+  .no-response-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 1.5rem;
+  }
+  
+  @media (max-width: 600px) {
+    .title {
+      font-size: 2rem;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+    }
+    
+    .question {
+      font-size: 1.3rem;
+    }
+    
+    .button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+    }
+    
+    .card {
+      padding: 1.5rem;
+    }
+    
+    .button-container {
+      gap: 1rem;
+    }
+    
+    .photos-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .love-letter {
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  }
